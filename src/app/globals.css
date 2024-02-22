@@ -23,7 +23,6 @@ a{
 }
 
 .container{
-    background-color: var(--bgSoft);
     width: 1236px;
     margin: auto;
     padding-left: 50px;
