@@ -70,3 +70,15 @@ a{
         width: 475px;
     }
 }
+
+@media (max-width: 932px) {
+    .container {
+        width: 430px;
+    }
+}
+
+@media (max-width: 844px) {
+    .container {
+        width: 390px;
+    }
+}
