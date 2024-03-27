@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const links = [
         { 
-            title: "HomePage", 
+            title: "Home", 
             path: "/", 
         },
         { 
@@ -54,7 +54,7 @@ const Links = () => {
                     )
                 }
         </div>
-        <Image className={styles.menuButton} src="/menu.png" width={30} height={30} onClick={()=>setOpen(prev=>!prev)}/>
+        <Image className={styles.menuButton} alt="" src="/menu.png" width={30} height={30} onClick={()=>setOpen(prev=>!prev)}/>
         {open && (
         <div className={styles.mobileLinks}>
                 {links.map((link) => (
