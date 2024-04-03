@@ -1,28 +1,52 @@
+
 import Image from "next/image"
 import styles from "./singlePost.module.css"
+import PostUser from "@/components/postUser/postUser"
+import { Suspense } from "react"
+import { getPost } from "@/lib/data"
 
-const SinglePostPage = () => {
+//FETCH DATA FROM API
+// const getData = async (slug) => {
+//     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`)
+  
+//     if (!res.ok) {
+//       throw new Error('Failed to fetch data')
+//     }
+  
+//     return res.json()
+  
+//   }
+
+const SinglePostPage = async ({params}) => {
+
+    const {slug} = params; 
+
+    //FETCH DATA FROM API
+    // const post = await getData(slug);
+
+    //FETCH DATA WITHOUT API
+    const post = await getPost(slug);
+
+    console.log(post);
+
     return (
         <div className={styles.container}>
-            <div className={styles.imgContainer}>
-                <Image className={styles.img} src="https://images.pexels.com/photos/20253067/pexels-photo-20253067/free-photo-of-roshkodol.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image" fill/>
-            </div>
+            {post.img && <div className={styles.imgContainer}>
+                <Image className={styles.img} src={post.img} alt="Image" fill/>
+            </div>}
             <div className={styles.textContainer}>
-                <h1 className={styles.title}>Title</h1>
+                <h1 className={styles.title}>{post?.title}</h1>
                 <div className={styles.detail}>
-                <Image className={styles.userImage}src="https://images.pexels.com/photos/20253067/pexels-photo-20253067/free-photo-of-roshkodol.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image" width={50} height={50}/>
+                {post && (<Suspense fallback={<div>Loading...</div>}>
+                <PostUser userId = {post.userId}/>
+                </Suspense>
+                )}
                 <div className={styles.detailText}>
-                    <span className={styles.detailTitle}>Author</span>
-                    <span className={styles.detailValue}>Colby Gatty</span>
-                </div>
-                <div className={styles.detailText}>
-                    <span className={styles.detailTitle}>Publised</span>
-                    <span className={styles.detailValue}>03.26.2024</span>
+                    <span className={styles.detailTitle}>Published</span>
+                    <span className={styles.detailValue}>{post.createdAt.toString().slice(4,16)}</span>
                 </div>
                 </div>
-                <div className={styles.content}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quae, quos et impedit nulla corporis dolorem debitis qui aliquam, corrupti aspernatur iure ab vero, odit eos error quisquam ut itaque?
-                </div>
+                <div className={styles.content}>{post.desc}</div>
             </div>
         </div>
     )
