@@ -6,7 +6,7 @@ import { Post, User } from "./models";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcryptjs";
 
-export const addPost = async (formData) => {
+export const addPost = async (prevState, formData) => {
 
     // const title = formData.get("title");
     // const description = formData.get("desc");
@@ -25,6 +25,7 @@ export const addPost = async (formData) => {
         await newPost.save();
         console.log("Post saved successfully!");
         revalidatePath("/blog");
+        revalidatePath("/admin");
     }catch (error) {
         console.log(error);
         return {error: "Something went wrong!"}
@@ -40,11 +41,46 @@ export const deletePost = async (formData) => {
         await Post.findByIdAndDelete(id);
         console.log("deleted successfully!");
         revalidatePath("/blog");
+        revalidatePath("/admin");
     }catch (error) {
         console.log(error);
         return {error: "Something went wrong!"}
     }
+};
+
+export const addUser = async (prevState, formData) => {
+
+  const { username, email, password, img } = Object.fromEntries(formData);
+  try {
+      connectToDb();
+      const newUser = new User({
+        username, email, password, img 
+      });
+
+      await newUser.save();
+      console.log("Post saved successfully!");
+      revalidatePath("/blog");
+  }catch (error) {
+      console.log(error);
+      return {error: "Something went wrong!"}
+  }
 }
+
+export const deleteUser = async (formData) => {
+
+  const {id} = Object.fromEntries(formData);
+  try {
+      connectToDb();
+
+      await Post.deleteMany({userId: id});
+      await User.findByIdAndDelete(id);
+      console.log("deleted successfully!");
+      revalidatePath("/admin");
+  }catch (error) {
+      console.log(error);
+      return {error: "Something went wrong!"}
+  }
+};
 
 export const handleGithubLogin = async () => {
     "use server"
@@ -109,6 +145,6 @@ export const handleGithubLogin = async () => {
       if(error.message.includes("CredentialsSignin")){
         return { error: "Username or password is incorrect!"};
       }
-      throw err;
+      throw error;
     }
   };

@@ -1,0 +1,22 @@
+.user {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.detail {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.postButton {
+    padding: 5px 10px;
+    background-color: var(--btn);
+    color: var(--textColor);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
