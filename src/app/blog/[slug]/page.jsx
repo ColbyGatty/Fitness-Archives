@@ -5,7 +5,7 @@ import PostUser from "@/components/postUser/postUser"
 import { Suspense } from "react"
 import { getPost } from "@/lib/data"
 
-//FETCH DATA FROM API
+// FETCH DATA FROM API
 const getData = async (slug) => {
     const res = await fetch(`http:localhost:3000/api/blog/${slug}`)
   

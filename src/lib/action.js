@@ -8,29 +8,64 @@ import bcrypt from "bcryptjs";
 
 export const addPost = async (prevState, formData) => {
 
-    // const title = formData.get("title");
-    // const description = formData.get("desc");
-    // const slug = formData.get("slug");
+  const { title, desc, userId } = Object.fromEntries(formData);
 
-    const { title, desc, slug, userId} = Object.fromEntries(formData);
-    try {
-        connectToDb();
-        const newPost = new Post({
-            title,
-            desc,
-            slug,
-            userId
-        });
+  // Convert title to slug
+  const slug = titleToSlug(title);
 
-        await newPost.save();
-        console.log("Post saved successfully!");
-        revalidatePath("/blog");
-        revalidatePath("/admin");
-    }catch (error) {
-        console.log(error);
-        return {error: "Something went wrong!"}
-    }
+  try {
+      connectToDb();
+      const newPost = new Post({
+          title,
+          desc,
+          slug,
+          userId
+      });
+
+      await newPost.save();
+      console.log("Post saved successfully!");
+      revalidatePath("/blog");
+      revalidatePath("/admin");
+  } catch (error) {
+      console.log(error);
+      return {error: "Something went wrong!"}
+  }
 }
+
+// Function to convert title to slug
+function titleToSlug(title) {
+return title
+  .toLowerCase()
+  .replace(/ /g,'-')
+  .replace(/[^\w-]+/g,'');
+}
+
+//Previous slug method rquires user to put slug name in the form
+// export const addPost = async (prevState, formData) => {
+
+//     // const title = formData.get("title");
+//     // const description = formData.get("desc");
+//     // const slug = formData.get("slug");
+
+//     const { title, desc, slug, userId} = Object.fromEntries(formData);
+//     try {
+//         connectToDb();
+//         const newPost = new Post({
+//             title,
+//             desc,
+//             slug,
+//             userId
+//         });
+
+//         await newPost.save();
+//         console.log("Post saved successfully!");
+//         revalidatePath("/blog");
+//         revalidatePath("/admin");
+//     }catch (error) {
+//         console.log(error);
+//         return {error: "Something went wrong!"}
+//     }
+// }
 
 export const deletePost = async (formData) => {
 

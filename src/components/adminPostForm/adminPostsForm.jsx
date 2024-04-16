@@ -13,7 +13,6 @@ const AdminPostForm = ({userId}) => {
             <h1>Add New Post</h1>
             <input type="hidden" name="userId" value={userId}/>
             <input type="text" name="title" placeholder="Title"/>
-            <input type="text" name="slug" placeholder="slug"/>
             <label>Upload a post picture:</label>
             <input type="text" name="img" placeholder="img"/>
             <textarea type="text" name="desc" placeholder="Description" rows={10}/>
