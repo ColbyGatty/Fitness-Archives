@@ -86,13 +86,27 @@ export const deletePost = async (formData) => {
 
 export const addUser = async (prevState, formData) => {
 
-  const { username, email, password, img } = Object.fromEntries(formData);
+  const { username, email, password, img, isAdmin } = Object.fromEntries(formData);
   try {
       connectToDb();
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
+
       const newUser = new User({
-        username, email, password, img 
+        username, 
+        email, 
+        password: hashedPassword, 
+        img, 
+        isAdmin
       });
 
+      if (isAdmin == "true") {
+        newUser.isAdmin = true;
+      };
+     if (isAdmin == "false") {
+        newUser.isAdmin = false;
+      };
+      
       await newUser.save();
       console.log("Post saved successfully!");
       revalidatePath("/blog");
