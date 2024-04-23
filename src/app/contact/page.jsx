@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './contact.module.css'
+import LottieMail from '@/components/lottieAnimation/LottieMail';
 
 export const metadata = {
   title: "Contact Page",
@@ -11,9 +12,14 @@ const ContactPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image className={styles.img} src="/contact.png" alt="Image" fill/>
-      </div>
+        <LottieMail className={styles.img} alt="Image" fill/>
+      </div >
       <div className={styles.formContainer}>
+      <h1 className={styles.title}>Connect with Me!</h1>
+        <p className={styles.description}>I love hearing from fellow fitness enthusiasts and researchers! 
+          If you have questions about any content, suggestions for topics,
+           or just want to chat about the science of lifting, please don't hesitate to reach out. 
+           Use the form below to send a message.<br/><br/></p>   
         <form action="" className={styles.form}>
           <input type="text" placeholder="Name"/>
           <input type="text" placeholder="Email Address"/>

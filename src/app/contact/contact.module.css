@@ -8,7 +8,6 @@
 .imgContainer {
     flex: 1;
     position: relative;
-    height: 500px;
 }
 
 .img {
@@ -17,6 +16,16 @@
 
 .formContainer {
     flex: 1;
+}
+
+.description{
+    font-size: 17px;
+    padding-bottom: 3%;
+    font-weight: 300;
+}
+
+.title{
+    font-size: 60px;
 }
 
 .form {
@@ -47,6 +56,6 @@ gap: 20px;
 
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
+        flex-wrap: wrap-reverse;
     }
 }

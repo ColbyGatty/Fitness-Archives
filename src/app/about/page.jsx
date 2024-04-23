@@ -1,5 +1,6 @@
 import Image from "next/image"
 import styles from "./about.module.css"
+import LottieSearch from "@/components/lottieAnimation/LottieSearch";
 
 export const metadata = {
   title: "About Page",
@@ -10,29 +11,33 @@ const AboutPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <h2 className={styles.subtitle}>About Agency</h2>
-        <h1 className={styles.title}>We create ideas that are biggger, bolder, braver and better!</h1>
-        <p className={styles.description}> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Nostrum accusamus numquam ducimus tempore obcaecati quia beatae, 
-          quis, dolor velit delectus recusandae, facilis molestias vel. 
-          Aperiam porro non dolorem repellendus error.</p>
+        <h2 className={styles.subtitle}>About Me & The Fitness Archives</h2>
+        <h1 className={styles.title}>All Your Science-Backed Fitness in One Place.</h1>
+        <p className={styles.description}> Hello, and welcome to the Fitness Archives! I'm Colby Gatty,
+         the founder of this site and a passionate advocate for scientifically informed fitness practices. 
+         With a deep interest in how scientific research can transform our training approaches, 
+         I started the Fitness Archives to help fitness enthusiasts like you and me navigate the vast amount of information out there.
+         <br/><br/>The Fitness Archives is more than just a blog;
+        it's a commitment to understanding and sharing what truly works in the realm of fitness. 
+        Here, you'll find a meticulously curated selection of the latest studies, expert analyses, 
+        and content from across the fitness world, each chosen for its credibility and relevance to our goals.</p>
           <div className={styles.boxes}>
             <div className={styles.box}>
-              <h1>10 K+</h1>
-              <p>Years of Experience</p>
+              <h1>New Posts</h1>
+              <p>Every Single Week </p>
               </div>
               <div className={styles.box}>
-              <h1>10 K+</h1>
-              <p>Years of Experience</p>
+              <h1>4+</h1>
+              <p>Years of Training</p>
               </div>
               <div className={styles.box}>
-              <h1>10 K+</h1>
-              <p>Years of Experience</p>
+              <h1>1 K+</h1>
+              <p>Users to Date</p>
               </div>
             </div>
         </div>
       <div className={styles.imgContainer}>
-        <Image src="/about.png" alt="Image" fill className={styles.img}/>
+      <LottieSearch className={styles.img}/>
       </div> 
     </div>
   );
