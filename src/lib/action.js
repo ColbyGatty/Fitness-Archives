@@ -132,9 +132,9 @@ export const deleteUser = async (formData) => {
   }
 };
 
-export const handleGithubLogin = async () => {
+export const handleGoogleLogin = async () => {
     "use server"
-    await signIn("github");
+    await signIn("google");
   };
 
   export const handleLogout = async () => {
@@ -198,3 +198,4 @@ export const handleGithubLogin = async () => {
       throw error;
     }
   };
+

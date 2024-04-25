@@ -1,28 +1,33 @@
 .container {
     display: flex;
-    gap: 100px;
+    flex-direction: column;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    overflow-wrap: break-word;
 }
 
-.imgContainer{
-    flex: 1;
-    position: relative;
-    height: calc(100vh - 200px);
+.imgContainer {
+    display: flex;
+    justify-content: center;
 }
 
 .img {
     object-fit: cover;
+    width: 75%;
 }
 
 .textContainer{
-    flex: 2;
     display: flex;
     flex-direction: column;
     gap: 50px;
+    width: 100%;
 
 }
 
 .title {
-    font-size: 64px;
+    font-size: 5vw;
+    text-align: center;
+    width: 100%;
 }
 
 .detail {
