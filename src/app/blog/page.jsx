@@ -19,18 +19,21 @@ const BlogPage = async () => {
   //FETCH DATA FROM API
   const posts = await getData()
 
-  //FETCH DATA WITHOUT API
-  // const posts = await getPosts();
+  // Reverse the order of posts
+  const reversedPosts = posts.reverse();
 
   return (
+    <div>
+  
     <div className={styles.container}>
-      {posts.map((post) => (
-      <div className={styles.post} key={post.id}>
+      {reversedPosts.map((post) => (
+        <div className={styles.post} key={post.id}>
       <PostCard post={post}/>
       </div>
-      ))}
-    </div>
-  )
+  ))}
+  </div>
+  </div>
+  );
 }
 
 export default BlogPage

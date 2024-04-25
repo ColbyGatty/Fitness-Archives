@@ -45,10 +45,11 @@ const SinglePostPage = async ({params}) => {
     console.log(post);
 
     return (
+        <div>
+        <div className={styles.imgContainer}> 
+        {post.img && <img className={styles.img} src={post.img} alt="Image" fill/>}
+        </div>
         <div className={styles.container}>
-            {post.img && <div className={styles.imgContainer}>
-                <Image className={styles.img} src={post.img} alt="Image" fill/>
-            </div>}
             <div className={styles.textContainer}>
                 <h1 className={styles.title}>{post?.title}</h1>
                 <div className={styles.detail}>
@@ -63,6 +64,7 @@ const SinglePostPage = async ({params}) => {
                 </div>
                 <div className={styles.content}>{post.desc}</div>
             </div>
+        </div>
         </div>
     )
 }

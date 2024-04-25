@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import Github from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectToDb } from "./connectToDb";
 import { User } from "./models";
@@ -38,9 +38,9 @@ export const {
 } = NextAuth({
     ...authConfig,
      providers: [
-        Github ({
-            clientId:process.env.GITHUB_ID, 
-            clientSecret:process.env.GITHUB_SECRET,
+        GoogleProvider ({
+            clientId:process.env.GOOGLE_ID, 
+            clientSecret:process.env.GOOGLE_SECRET,
         }),
         CredentialsProvider({
             async authorize(credentials){
@@ -56,7 +56,7 @@ export const {
     callbacks: {
         async signIn({user, account, profile}) {
 
-            if(account.provider === "github"){
+            if(account.provider === "google"){
                 connectToDb()
                 try{
 
@@ -64,9 +64,9 @@ export const {
 
                     if(!user){
                         const newUser = new User({
-                            username: profile.login,
+                            username: profile.name,
                             email: profile.email,
-                            image: profile.avatar_url,
+                            img: profile.picture,
                         });
 
                         await newUser.save();
