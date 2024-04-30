@@ -4,7 +4,7 @@ import { getPosts } from '@/lib/data';
 
 //FETCH DATA FROM API
 const getData = async () => {
-  const res = await fetch("https://fitness-archives.vercel.app/api/blog", {cache: 'no-store', next: { revalidate: 0 }})
+  const res = await fetch("https://fitness-archives.vercel.app/api/blog", {cache: 'no-cache', next: { revalidate: 0 }})
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
