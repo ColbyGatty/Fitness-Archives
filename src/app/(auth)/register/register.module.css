@@ -47,3 +47,12 @@
     border: none;
     border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+    .wrapper{
+        width: 100%;
+    }
+    .title {
+        font-size: 0.9rem;
+    }
+}
