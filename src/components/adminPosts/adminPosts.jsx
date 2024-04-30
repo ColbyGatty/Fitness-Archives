@@ -14,7 +14,7 @@ const AdminPosts = async () => {
             {posts.map(post => (
                 <div className={styles.post} key={post.id}>
                     <div className={styles.detail}>
-                        <Image src={post.img || "/noAvatar.png"} alt="" width={50} height={50}/>
+                        <img src={post.img || "/noAvatar.png"} alt="" width={50} height={50}/>
                         <span className={styles.postTitle}>{post.title}</span>
                         </div>
                         <form action={deletePost}>

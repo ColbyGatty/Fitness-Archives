@@ -15,7 +15,7 @@ const Home = () => {
         <div>
       <p className={styles.description}>
       Join me in The Fitness Archives, where I bring together the latest and most reliable science-based lifting techniques and fitness insights. 
-      As a fitness enthusiast committed to the power of knowledge, I've created this platform to help you stay updated with the newest research and methodologies in lifting. 
+      As a fitness enthusiast committed to the power of knowledge, I have created this platform to help you stay updated with the newest research and methodologies in lifting. 
       Explore the growing library of curated videos, articles, and resources, all compiled into one place to give you ease of access to the best science-driven fitness content available. 
       </p>
       <div className={styles.buttons}>

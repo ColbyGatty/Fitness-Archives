@@ -18,7 +18,7 @@ const ContactPage = () => {
       <h1 className={styles.title}>Connect with Me!</h1>
         <p className={styles.description}>I love hearing from fellow fitness enthusiasts and researchers! 
           If you have questions about any content, suggestions for topics,
-           or just want to chat about the science of lifting, please don't hesitate to reach out. 
+           or just want to chat about the science of lifting, please do not hesitate to reach out. 
            Use the form below to send a message.<br/><br/></p>   
         <form action="https://api.web3forms.com/submit" method="POST" className={styles.form}>
           <input type="hidden" name="access_key" value="6270baef-8dbb-4ca9-831c-817ad3905976" />

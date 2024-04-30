@@ -13,13 +13,13 @@ const AboutPage = () => {
       <div className={styles.textContainer}>
         <h2 className={styles.subtitle}>About Me & The Fitness Archives</h2>
         <h1 className={styles.title}>All Your Science-Backed Fitness in One Place.</h1>
-        <p className={styles.description}> Hello, and welcome to the Fitness Archives! I'm Colby Gatty,
+        <p className={styles.description}> Hello, and welcome to the Fitness Archives! I am Colby Gatty,
          the founder of this site and a passionate advocate for scientifically informed fitness practices. 
          With a deep interest in how scientific research can transform our training approaches, 
          I started the Fitness Archives to help fitness enthusiasts like you and me navigate the vast amount of information out there.
          <br/><br/>The Fitness Archives is more than just a blog;
-        it's a commitment to understanding and sharing what truly works in the realm of fitness. 
-        Here, you'll find a meticulously curated selection of the latest studies, expert analyses, 
+        it is a commitment to understanding and sharing what truly works in the realm of fitness. 
+        Here, you will find a meticulously curated selection of the latest studies, expert analyses, 
         and content from across the fitness world, each chosen for its credibility and relevance to our goals.</p>
           <div className={styles.boxes}>
             <div className={styles.box}>
