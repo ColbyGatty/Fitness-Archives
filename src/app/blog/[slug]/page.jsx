@@ -5,9 +5,10 @@ import PostUser from "@/components/postUser/postUser"
 import { Suspense } from "react"
 import { getPost } from "@/lib/data"
 
+export const fetchCache = 'force-no-store';
 // FETCH DATA FROM API
 const getData = async (slug) => {
-    const res = await fetch(`https://fitness-archives.vercel.app/api/blog/${slug}`, {cache: 'no-store'})
+    const res = await fetch(`https://fitness-archives.vercel.app/api/blog/${slug}`, {cache: fetchCache})
   
     if (!res.ok) {
       throw new Error('Failed to fetch data')
