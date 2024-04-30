@@ -28,7 +28,7 @@ const BlogPage = async () => {
     <div className={styles.container}>
       {reversedPosts.map((post) => (
         <div className={styles.post} key={post.id}>
-      <PostCard post={post}/>
+      <a><PostCard post={post}/></a>
       </div>
   ))}
   </div>
