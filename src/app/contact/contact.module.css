@@ -63,4 +63,10 @@ gap: 20px;
         width: 85%;
         margin-left: 0;
     }
+    .title {
+        text-align: center;
+    }
+    .description {
+        text-align: center;
+    }
 }

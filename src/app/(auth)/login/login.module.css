@@ -28,3 +28,12 @@
     padding: 20px;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .wrapper{
+        width: 100%;
+    }
+    .title {
+        font-size: 0.9rem;
+    }
+}
