@@ -25,7 +25,7 @@ const ContactPage = () => {
           <input type="hidden" name="_subject" value="Fitness Archives" />
           <input type="text" name="_name" placeholder="Name" required/>
           <input type="text" name="email" placeholder="Email Address" required/>
-          <input type="number" name="_phone" placeholder="Phone Number (Optional)"/>
+          <input type="text" name="_phone" placeholder="Phone Number (Optional)"/>
           <textarea name="message" id='' cols='30' rows='10' required placeholder='Message' className={styles.textarea}></textarea>
           <button type="submit" className={styles.button}>Send</button>
         </form>

@@ -16,6 +16,7 @@ const AdminPostForm = ({userId}) => {
             <label>Upload a post picture:</label>
             <input type="text" name="img" placeholder="img"/>
             <textarea type="text" name="desc" placeholder="Description" rows={10}/>
+            <input type="link" name="link" placeholder="Link to Source"/>
             <button>Add</button>
             {state && state.error}
         </form>

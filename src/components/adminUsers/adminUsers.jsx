@@ -5,11 +5,12 @@ import Image from 'next/image';
 
 const AdminUsers = async () => {
 
-const users = await getUsers();
+  const users = await getUsers();
 
-return (
-    <div className={styles.container}>
-        <h1>Users</h1>
+  return (
+    <div>
+        <h1 className={styles.userHeader}>Users ({users.length})</h1> {/* Display the number of users here */}
+        <div className={styles.container}>
         {users.map((user) => (
             <div className={styles.user} key={user.id}>
                 <div className={styles.detail}>
@@ -28,8 +29,9 @@ return (
             </div>
         ))}
        
-    </div>
-)
+        </div>
+     </div>
+  )
 }
 
-export default AdminUsers;
+export default AdminUsers

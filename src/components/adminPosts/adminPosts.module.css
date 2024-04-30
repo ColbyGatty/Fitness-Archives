@@ -1,3 +1,18 @@
+.container {
+    height: 55vh;
+    overflow-y: scroll;
+    border: 2px solid;
+    border-color: white;
+    padding-left: 5%;
+    padding-right:5%;
+    border-radius: 10px;
+    background-color: var(--textColor);
+}
+
+.postHeader {
+    padding-bottom: 3%;
+}
+
 .post {
     margin: 20px 0px;
     display: flex;

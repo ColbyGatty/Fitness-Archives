@@ -29,6 +29,7 @@ export const generateMetadata = async ({params}) => {
     return {
         title: post.title,
         description: post.desc,
+        link: post.link,
     }
 };
 
@@ -47,7 +48,7 @@ const SinglePostPage = async ({params}) => {
     return (
         <div>
         <div className={styles.imgContainer}> 
-        {post.img && <img className={styles.img} src={post.img} alt="Image" fill/>}
+        {post.img && <img className={styles.img} src={post.img} alt="Image" />}
         </div>
         <div className={styles.container}>
             <div className={styles.textContainer}>
@@ -62,7 +63,8 @@ const SinglePostPage = async ({params}) => {
                     <span className={styles.detailValue}>{post.createdAt.toString().slice(4,16)}</span>
                 </div>
                 </div>
-                <div className={styles.content}>{post.desc}</div>
+                <pre className={styles.content}>{post.desc}</pre>
+                {post.link && <a href={post.link} target="_blank" className={styles.link}>{post.link}</a>}
             </div>
         </div>
         </div>
