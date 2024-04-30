@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from 'react';
 import PostCard from '@/components/postCard/postCard';
 import styles from './blog.module.css';
