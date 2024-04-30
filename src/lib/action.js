@@ -8,7 +8,7 @@ import bcrypt from "bcryptjs";
 
 export const addPost = async (prevState, formData) => {
 
-  const { title, img, desc, userId } = Object.fromEntries(formData);
+  const { title, img, desc, link, userId, } = Object.fromEntries(formData);
 
   // Convert title to slug
   const slug = titleToSlug(title);
@@ -20,6 +20,7 @@ export const addPost = async (prevState, formData) => {
           img,
           desc,
           slug,
+          link,
           userId
       });
 
