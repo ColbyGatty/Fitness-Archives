@@ -2,10 +2,9 @@ import PostCard from '@/components/postCard/postCard';
 import styles from './blog.module.css';
 import { getPosts } from '@/lib/data';
 
-export const fetchCache = 'force-no-store'
 //FETCH DATA FROM API
 const getData = async () => {
-  const res = await fetch("https://fitness-archives.vercel.app/api/blog", {cache: fetchCache})
+  const res = await fetch("https://fitness-archives.vercel.app/api/blog", {cache: 'no-store'})
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
