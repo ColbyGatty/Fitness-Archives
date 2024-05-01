@@ -24,7 +24,7 @@ module.exports = (req, res) => {
   });
 
   let mailOptions = {
-    from: '"Fitness Archives Contact" <colbygattycreates@gmail.com>', // sender address
+    from: 'colbygattycreates@gmail.com', // sender address
     to: process.env.EMAIL_USER, // list of receivers
     subject: 'Fitness Archives Contact Request', // Subject line
     text: 'Hello world?', // plain text body
