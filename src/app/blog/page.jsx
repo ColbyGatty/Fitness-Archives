@@ -17,8 +17,9 @@ const getData = async () => {
 const BlogPage = async () => {
   
   //FETCH DATA FROM API
-  const posts = await getData()
-
+  // const posts = await getData()
+  
+  const posts = await getPosts();
   // Reverse the order of posts
   const reversedPosts = posts.reverse();
 

@@ -6,25 +6,25 @@ import { Suspense } from "react"
 import { getPost } from "@/lib/data"
 
 // FETCH DATA FROM API
-const getData = async (slug) => {
-    const res = await fetch(`https://fitness-archives.vercel.app/api/blog/${slug}`, {cache: 'no-store'})
+// const getData = async (slug) => {
+//     const res = await fetch(`https://fitness-archives.vercel.app/api/blog/${slug}`, {cache: 'no-store'})
   
-    if (!res.ok) {
-      throw new Error('Failed to fetch data')
-    }
+//     if (!res.ok) {
+//       throw new Error('Failed to fetch data')
+//     }
   
-    return res.json()
+//     return res.json()
   
-  };
+//   };
 
 export const generateMetadata = async ({params}) => {
     const {slug} = params; 
 
     //FETCH DATA FROM API
-    const post = await getData(slug);
+    // const post = await getData(slug);
 
     //FETCH DATA WITHOUT API
-    // const post = await getPost(slug);
+    const post = await getPost(slug);
 
     return {
         title: post.title,
