@@ -1,3 +1,5 @@
+"use server";
+
 const nodemailer = require('nodemailer');
 
 module.exports = (req, res) => {
