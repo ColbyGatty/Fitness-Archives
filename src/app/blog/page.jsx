@@ -3,22 +3,22 @@ import styles from './blog.module.css';
 import { getPosts } from '@/lib/data';
 
 //FETCH DATA FROM API
-const getData = async () => {
-  const res = await fetch("https://fitness-archives.vercel.app/api/blog", {cache: 'no-store'})
+// const getData = async () => {
+//   const res = await fetch("https://fitness-archives.vercel.app/api/blog", {cache: 'no-store'})
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data')
+//   }
 
-  return res.json()
+//   return res.json()
 
-}
+// }
 
 const BlogPage = async () => {
   
   //FETCH DATA FROM API
   // const posts = await getData()
-  
+
   const posts = await getPosts();
   // Reverse the order of posts
   const reversedPosts = posts.reverse();
