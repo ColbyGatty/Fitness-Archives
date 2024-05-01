@@ -69,4 +69,8 @@
     .imgContainer {
         display: none;
     }
+    .textContainer {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
 }
