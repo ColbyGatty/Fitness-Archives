@@ -20,8 +20,7 @@ const ContactPage = () => {
           If you have questions about any content, suggestions for topics,
            or just want to chat about the science of lifting, please do not hesitate to reach out. 
            Use the form below to send a message.<br/><br/></p>   
-        <form action="https://api.web3forms.com/submit" method="POST" className={styles.form}>
-          <input type="hidden" name="access_key" value="6270baef-8dbb-4ca9-831c-817ad3905976" />
+           <form action="/api/send" method="POST" className={styles.form}>
           <input type="hidden" name="_subject" value="Fitness Archives" />
           <input type="text" name="_name" placeholder="Name" required/>
           <input type="text" name="email" placeholder="Email Address" required/>
