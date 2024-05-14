@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default: "Colby's Next.js app",
+    default: "The Fitness Archives",
     template: "%s | Next.js app"
   }
 };
