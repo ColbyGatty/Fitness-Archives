@@ -25,7 +25,7 @@ export async function GET(req) {
     await transporter.sendMail(mailOptions);
     console.log('Email sent');
     // Return a 'Thank You' message with a link to go back and style the thank you message
-    return NextResponse.redirect('https://fitness-archives.vercel.app/thankYou'); 
+    return NextResponse.redirect('https://www.thefitnessarchives.com/thankYou'); 
 
   } catch (error) {
     console.log(error);
